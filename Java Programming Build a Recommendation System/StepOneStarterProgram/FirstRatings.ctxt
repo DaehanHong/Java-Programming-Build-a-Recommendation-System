@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=FirstRatings
+comment1.params=filename
+comment1.target=java.util.ArrayList\ loadMovies(java.lang.String)
+comment2.params=filename
+comment2.target=java.util.ArrayList\ loadRaters(java.lang.String)
+comment3.params=filename\ RaterID
+comment3.target=void\ findNumOfRater(java.lang.String,\ java.lang.String)
+comment3.text=public\ ArrayList<Rater>\ loadRaters1(String\ filename){\r\n\ \ \ \ \ \ \ \ ArrayList<Rater>\ raters\ \=\ new\ ArrayList<Rater>();\r\n\ \ \ \ \ \ \ \ FileResource\ fr\ \=\ new\ FileResource("data/"\ +\ filename);\r\n\ \ \ \ \ \ \ \ CSVParser\ raterParser\ \=\ fr.getCSVParser();\r\n\ \ \ \ \ \ \ \ ArrayList<String>\ IDs\ \=\ new\ ArrayList<String>();\r\n\ \ \ \ \ \ \ \ for\ (CSVRecord\ currentRow\:\ raterParser){\r\n\ \ \ \ \ \ \ \ \ \ \ \ String\ raterId\ \=\ currentRow.get("rater_id");\r\n\ \ \ \ \ \ \ \ \ \ \ \ if\ (\!IDs.contains(raterId)){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IDs.add(raterId);\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ for\ (String\ s\:\ IDs){\r\n\ \ \ \ \ \ \ \ \ \ \ \ Rater\ currRater\ \=\ new\ Rater(s);\r\n\ \ \ \ \ \ \ \ \ \ \ \ for\ (CSVRecord\ currentRow\:\ raterParser){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (s.equals(currentRow.get("rater_id"))){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ movieId\ \=\ currentRow.get("movie_id");\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ rating\ \=\ Double.parseDouble(currentRow.get("rating"));\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currRater.addRating(movieId,\ rating);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ raters.add(currRater);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ return\ raters;\r\n}
+comment4.params=filename
+comment4.target=void\ findMaxNumOfRatingsByRater(java.lang.String)
+comment5.params=filename\ movieID
+comment5.target=void\ findRatingsOfMovie(java.lang.String,\ java.lang.String)
+comment6.params=filename
+comment6.target=void\ countRatedMovies(java.lang.String)
+comment7.params=
+comment7.target=void\ test()
+comment8.params=filename
+comment8.target=void\ testLoadMovies(java.lang.String)
+comment9.params=filename
+comment9.target=void\ testLoadRaters(java.lang.String)
+numComments=10
